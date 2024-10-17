@@ -2,7 +2,7 @@ import React, {useCallback} from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import { createUseStyles } from 'react-jss';
-import {DetailsDialog} from '../components/shared/modal';
+import {DetailsDialog} from '../components/common/modal';
 import sharedStyles from '../shared/sharedStyles';
 import { useGetPokemonDetails } from '../hooks/useGetPokemonDetails';
 
@@ -14,8 +14,7 @@ export const DetailsPage = () => {
   const classes = useStyles();
   const { id } = useParams();
   const navigate = useNavigate();
-  const {pokemon = {}} = useGetPokemonDetails(id);
-  console.log(pokemon);
+  const {pokemon} = useGetPokemonDetails(id);
 
   const navigateToList = useCallback(() => {
     navigate(`/pokemon`)
@@ -23,7 +22,11 @@ export const DetailsPage = () => {
 
   return (
     <div className={classes.details}>
-      <DetailsDialog title={pokemon.name} onCloseModal={navigateToList} openModal={true}>
+      <DetailsDialog
+        title={<h1 >{pokemon.name}</h1>}
+        onCloseModal={navigateToList}
+        openModal={true}
+      >
         <div>
         <div className={`${classes.row} ${classes.centerText}`}>
             <div className={`${classes.col}  ${classes.col4}`}>

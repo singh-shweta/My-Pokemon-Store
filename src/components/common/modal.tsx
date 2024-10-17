@@ -1,13 +1,15 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 
-
+/**
+ * Its a parent driven modal.
+ * The open property willbe driven by the parent component.
+ */
 interface DialogProps {
   onCloseModal: () => void;
-  title: string;
+  title: React.ReactNode | string;
   openModal: boolean;
   children: React.ReactNode;
 }

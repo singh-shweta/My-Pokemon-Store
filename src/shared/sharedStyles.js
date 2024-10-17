@@ -1,9 +1,9 @@
 const sharedStyles = {
     container: {
         display: 'flex',
-        flexDirection: 'column', // Allows stacking of rows
+        flexDirection: 'column',
         padding: '20px',
-        gap: '10px', // Space between rows
+        gap: '10px',
         height: '100%',
         overflow: 'scroll'
     },

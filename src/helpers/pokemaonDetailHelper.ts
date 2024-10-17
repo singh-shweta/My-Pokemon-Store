@@ -1,19 +1,4 @@
-interface MinMaxDetails {
-    minimum: string;
-    maximum: string;
-  }
-
-export type Pokemon = {
-    id: string;
-    name: string;
-    image: string;
-    number: string;
-    types: Array<string>;
-    weight: MinMaxDetails;
-    height: MinMaxDetails;
-    classification: string;
-    resistant: string;
-  };
+import {Pokemon} from './typesAndInterfaces';
 
 export const getDetailedIntro = ( pokemon: Pokemon ) => {
     const {name, classification, height, weight} = pokemon;

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { createUseStyles } from 'react-jss';
 import { useGetPokemons } from '../../hooks/useGetPokemons';
 import sharedStyles from '../../shared/sharedStyles';
-import { SearchInput } from '../shared/searchInput';
+import { SearchInput } from '../common/searchInput';
 import { ListCard } from './ListCard';
 
 export const PokemonList = () => {
@@ -27,7 +27,7 @@ export const PokemonList = () => {
     
   }, [pokemons]);
 
-  const goToDetails = (item) => {
+  const goToDetails = (item: { id: string; }) => {
     navigate(`/pokemon/${item.id}`)
   };
 
