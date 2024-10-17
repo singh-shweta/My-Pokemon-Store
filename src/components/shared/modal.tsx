@@ -23,18 +23,14 @@ const style = {
   boxShadow: 24,
   p: 4,
   '& *': {
-    color: '#282828',  // This targets all child elements to ensure they inherit the text color
+    color: '#282828',  
   },
 };
 export const DetailsDialog: React.FC<DialogProps> = ({onCloseModal, title, openModal, children}) => {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
   return (
     <div>
       <Modal
-        open={true}
+        open={openModal}
         onClose={onCloseModal}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
